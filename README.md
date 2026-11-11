@@ -1,12 +1,12 @@
 # All Things MC94
 
-Agent resource site for the MC94 market center, published with GitHub Pages at https://allthingsmc94.com.
+Agent resource site for the MC94 market center, published with GitHub Pages. Preview address: https://kwrsagentservices-web.github.io/allthingsmc94/. The custom domain allthingsmc94.com is NOT connected yet.
 
 ## How this site works
 
 - `index.html` is the whole site (layout, styles and behavior). It rarely needs to change.
 - `resources.json` holds every category and every link. **Almost all updates happen here.**
-- `CNAME` tells GitHub Pages the site's domain. Do not delete or edit it.
+- There is intentionally no `CNAME` file yet. When the owner is ready to go live on allthingsmc94.com, add a `CNAME` file containing `allthingsmc94.com`, set the custom domain in Settings -> Pages, and update the DNS records. Until then the preview address above must keep working.
 
 ## Notes for Claude (and anyone maintaining this)
 
