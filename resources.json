@@ -1,0 +1,16 @@
+{
+  "categories": [
+    { "id": "training", "name": "Training and classes", "desc": "Class calendar, coaching and skill building." },
+    { "id": "transactions", "name": "Transactions and forms", "desc": "Contracts, checklists and closing support." },
+    { "id": "marketing", "name": "Marketing and design", "desc": "Templates, brand assets and listing marketing." },
+    { "id": "tech", "name": "Tech and tools", "desc": "Software, logins and how-to guides." },
+    { "id": "leads", "name": "Lead generation", "desc": "Systems and scripts for growing your pipeline." },
+    { "id": "events", "name": "News and events", "desc": "Market center updates and what is coming up." }
+  ],
+  "resources": [
+    { "id": "example-calendar", "cat": "training", "title": "Example: Class and event calendar", "url": "https://www.kw.com", "note": "Replace this with your real link.", "pin": true, "example": true },
+    { "id": "example-forms", "cat": "transactions", "title": "Example: Contract and form library", "url": "https://www.kw.com", "note": "Replace this with your real link.", "pin": true, "example": true },
+    { "id": "example-marketing", "cat": "marketing", "title": "Example: Listing marketing templates", "url": "https://www.kw.com", "note": "Replace this with your real link.", "example": true },
+    { "id": "example-tech", "cat": "tech", "title": "Example: Tech support and how-to guides", "url": "https://www.kw.com", "note": "Replace this with your real link.", "example": true }
+  ]
+}
