@@ -42,56 +42,70 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.5;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-top: max(28px, env(safe-area-inset-top, 0px));
   padding-bottom: max(40px, env(safe-area-inset-bottom, 0px));
 }
 a { color: inherit; }
 .wrap { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
-
-/* Hero: a yard sign. Red board, a rider tag hanging from two short chains, survey-map grid behind. */
-.hero { position: relative; isolation: isolate; padding-top: 8px; }
-.hero::before {
-  content: ""; position: absolute; z-index: -1; pointer-events: none;
-  inset: -28px -16px -8px;
-  background:
-    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 32px 32px,
-    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 32px 32px;
-  opacity: .7;
-  -webkit-mask-image: linear-gradient(#000 20%, transparent);
-  mask-image: linear-gradient(#000 20%, transparent);
+.page {
+  max-width: 912px; margin: 0 auto; padding-top: 28px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
+
+/* Header band: black at the top fading to dark red, a faint line drawing of houses along the bottom, a yard sign on top. */
+.band {
+  --sign: #FFFFFF; --sign-ink: #1A0B0C; --sign-red: #B3261E;
+  position: relative; isolation: isolate; overflow: hidden;
+  color: #FFFFFF;
+  background: linear-gradient(180deg, #030102 0%, #120406 6%, #1D0709 38%, #55100F 78%, #7B1518 100%);
+  border-bottom: 4px solid var(--accent);
+  padding-top: max(26px, env(safe-area-inset-top, 0px));
+  padding-bottom: 64px;
+}
+.band::after {
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; height: 84px; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20600%20120%27%20fill%3D%27none%27%20stroke%3D%27%23fff%27%20stroke-opacity%3D%27.2%27%20stroke-width%3D%271.5%27%20stroke-linejoin%3D%27round%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M0%20118H600%27%2F%3E%3Cpath%20d%3D%27M20%20118V60H120V118M10%2062L70%2022L130%2062M100%2042V26H112V50%27%2F%3E%3Crect%20x%3D%2758%27%20y%3D%2788%27%20width%3D%2724%27%20height%3D%2730%27%2F%3E%3Crect%20x%3D%2730%27%20y%3D%2774%27%20width%3D%2718%27%20height%3D%2716%27%2F%3E%3Crect%20x%3D%2792%27%20y%3D%2774%27%20width%3D%2718%27%20height%3D%2716%27%2F%3E%3Cpath%20d%3D%27M160%20118V40H260V118M152%2042L210%2012L268%2042%27%2F%3E%3Crect%20x%3D%27172%27%20y%3D%2752%27%20width%3D%2716%27%20height%3D%2714%27%2F%3E%3Crect%20x%3D%27232%27%20y%3D%2752%27%20width%3D%2716%27%20height%3D%2714%27%2F%3E%3Crect%20x%3D%27172%27%20y%3D%2784%27%20width%3D%2716%27%20height%3D%2714%27%2F%3E%3Crect%20x%3D%27232%27%20y%3D%2784%27%20width%3D%2716%27%20height%3D%2714%27%2F%3E%3Crect%20x%3D%27198%27%20y%3D%2788%27%20width%3D%2724%27%20height%3D%2730%27%2F%3E%3Cpath%20d%3D%27M295%20118V78H415V118M288%2080L355%2050L422%2080%27%2F%3E%3Crect%20x%3D%27385%27%20y%3D%2792%27%20width%3D%2726%27%20height%3D%2726%27%2F%3E%3Crect%20x%3D%27310%27%20y%3D%2792%27%20width%3D%2716%27%20height%3D%2726%27%2F%3E%3Crect%20x%3D%27336%27%20y%3D%2790%27%20width%3D%2724%27%20height%3D%2714%27%2F%3E%3Cpath%20d%3D%27M455%20118V55H555V118M445%2057L505%2025L565%2057%27%2F%3E%3Ccircle%20cx%3D%27505%27%20cy%3D%2745%27%20r%3D%276%27%2F%3E%3Crect%20x%3D%27493%27%20y%3D%2784%27%20width%3D%2724%27%20height%3D%2734%27%2F%3E%3Crect%20x%3D%27466%27%20y%3D%2770%27%20width%3D%2716%27%20height%3D%2714%27%2F%3E%3Crect%20x%3D%27528%27%20y%3D%2770%27%20width%3D%2716%27%20height%3D%2714%27%2F%3E%3Cpath%20d%3D%27M584%20118V100%27%2F%3E%3Ccircle%20cx%3D%27584%27%20cy%3D%2790%27%20r%3D%2710%27%2F%3E%3C%2Fsvg%3E") repeat-x center bottom / auto 84px;
+}
+.band.compact { padding-top: max(18px, env(safe-area-inset-top, 0px)); padding-bottom: 46px; }
+.band.compact::after { height: 56px; background-size: auto 56px; }
+.band-in {
+  max-width: 912px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.mini { font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: -.01em; text-decoration: none; color: #FFFFFF; }
+.mini b { font-weight: 800; }
 .board {
-  background: var(--accent); color: var(--accent-ink);
-  border-radius: 6px; padding: 22px 24px 24px;
-  box-shadow: 0 2px 0 var(--ink);
+  display: inline-block; max-width: 100%;
+  background: var(--sign); color: var(--sign-ink);
+  border-radius: 6px; padding: 20px 28px 22px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, .55);
 }
 .board h1 {
-  font-family: var(--font-display); font-weight: 800;
+  font-family: var(--font-display); font-weight: 800; color: var(--sign-red);
   font-size: clamp(56px, 16vw, 104px); line-height: .9; letter-spacing: -.04em;
-  margin: 0; text-wrap: balance;
+  margin: 0;
 }
 .board h1 .small {
   display: block; font-size: .3em; font-weight: 600; letter-spacing: .02em;
-  text-transform: uppercase; opacity: .85; margin-bottom: .45em;
+  text-transform: uppercase; color: var(--sign-ink); margin-bottom: .45em;
 }
 .rider {
-  position: relative; display: inline-block; margin: 16px 0 0 26px;
-  background: var(--surface); color: var(--ink); border: 2px solid var(--ink); border-radius: 4px;
+  position: relative; display: block; width: max-content; margin: 16px 0 0 28px;
+  background: #080304; color: #FFFFFF; border: 2px solid rgba(255, 255, 255, .85); border-radius: 4px;
   font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
   padding: 7px 18px; transform-origin: 50% -16px;
   animation: swing 4.5s ease-in-out 1s 3 both;
 }
 .rider::before, .rider::after {
-  content: ""; position: absolute; top: -16px; width: 2px; height: 16px; background: var(--ink);
+  content: ""; position: absolute; top: -16px; width: 2px; height: 16px; background: rgba(255, 255, 255, .85);
 }
 .rider::before { left: 16px; }
 .rider::after { right: 16px; }
 @keyframes swing { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(2.2deg); } 75% { transform: rotate(-2.2deg); } }
 .hello { margin: 18px 0 0; max-width: 46ch; font-size: 18px; }
 .hello strong { font-family: var(--font-display); font-weight: 600; }
-.hello span { color: var(--muted); }
+.hello span { color: rgba(255, 255, 255, .78); }
 
 .search { display: block; }
 .search input {
@@ -165,9 +179,14 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 </style>
 </head>
 <body>
-<div class="wrap" id="app">
+<header class="band" id="band">
+  <div class="band-in">
+    <div class="board"><h1><span class="small">All Things</span>MC94</h1></div>
+  </div>
+</header>
+<main class="page" id="app">
   <div id="view" aria-live="polite"><div class="empty">Unlocking the door...</div></div>
-</div>
+</main>
 <noscript>This site needs JavaScript turned on to show the resource list.</noscript>
 <script>
 (function () {
@@ -310,17 +329,26 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     box.appendChild(query ? searchView(query) : (c ? catView(c) : homeView()));
   }
 
+  function renderBand(c) {
+    var band = document.getElementById('band');
+    band.className = 'band' + (c ? ' compact' : '');
+    band.textContent = '';
+    band.appendChild(h('div', { class: 'band-in' }, c
+      ? h('a', { class: 'mini', href: '#' }, 'All Things ', h('b', { text: 'MC94' }))
+      : [
+          h('div', { class: 'board' }, h('h1', null, h('span', { class: 'small', text: 'All Things' }), 'MC94')),
+          h('span', { class: 'rider', text: 'Agent resources' }),
+          h('p', { class: 'hello' }, h('strong', { text: greeting() + ', agents. ' }), h('span', { text: tagline }))
+        ]));
+  }
+
   function render() {
     var c = currentCat();
+    renderBand(c);
     view.textContent = '';
     view.appendChild(h('div', { class: 'wrap' },
-      c ? null : h('div', { class: 'hero' },
-        h('div', { class: 'board' },
-          h('h1', null, h('span', { class: 'small', text: 'All Things' }), 'MC94')),
-        h('span', { class: 'rider', text: 'Agent resources' }),
-        h('p', { class: 'hello' }, h('strong', { text: greeting() + ', agents. ' }), h('span', { text: tagline }))),
       h('label', { class: 'search' },
-        h('input', { type: 'search', id: 'q', placeholder: 'Looking for something? Try “forms” or “class”', 'aria-label': 'Search every resource', autocomplete: 'off', value: q,
+        h('input', { type: 'search', id: 'q', placeholder: 'Search forms, classes, tools', 'aria-label': 'Search every resource', autocomplete: 'off', value: q,
           oninput: function (e) { q = e.target.value; renderContent(); } })),
       h('div', { id: 'content' }),
       h('footer', { text: 'Missing a link you need? Email allthingsmc94@kw.com and we will get it added. Each office is independently owned and operated. Equal Housing Opportunity.' })));
