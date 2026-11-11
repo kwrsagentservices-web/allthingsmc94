@@ -157,6 +157,14 @@ input:focus-visible, a:focus-visible, button:focus-visible {
 .row .meta { font-size: 12px; color: var(--muted); margin-top: 2px; overflow-wrap: anywhere; }
 .row .arrow { flex: none; font-size: 20px; color: var(--accent); transition: transform .15s ease; }
 .row:hover .arrow { transform: translate(2px, -2px); }
+.row.feature { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); padding: 20px 22px; }
+.row.feature:hover { border-color: var(--ink); }
+.row.feature .title { font-size: 22px; }
+.row.feature .sub, .row.feature .meta, .row.feature .arrow { color: var(--accent-ink); }
+.row.feature .sub { opacity: .92; }
+.row.feature .meta { opacity: .8; }
+.row.feature .arrow { font-size: 26px; }
+.row.feature .pill { color: var(--accent-ink); border-color: var(--accent-ink); }
 .pill {
   display: inline-block; align-self: flex-start; font-size: 11px; font-weight: 600; letter-spacing: .08em;
   text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 999px;
@@ -263,11 +271,11 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     return m ? catById(m[1]) : null;
   }
 
-  function rowFor(r, showCat) {
+  function rowFor(r, showCat, big) {
     var c = catById(r.cat);
-    return h('a', { class: 'row', href: safeUrl(r.url), target: '_blank', rel: 'noopener' },
+    return h('a', { class: 'row' + (big ? ' feature' : ''), href: safeUrl(r.url), target: '_blank', rel: 'noopener' },
       h('span', { class: 'text' },
-        r.example ? h('span', { class: 'pill', text: 'Example' }) : null,
+        r.example ? h('span', { class: 'pill', text: 'Example' }) : (r.new ? h('span', { class: 'pill', text: 'New' }) : null),
         h('span', { class: 'title', text: r.title }),
         r.note ? h('span', { class: 'sub', text: r.note }) : null,
         h('span', { class: 'meta', text: domain(r.url) + (showCat && c ? ' · ' + c.name : '') })),
@@ -276,7 +284,13 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
 
   function homeView() {
     var box = h('div', { class: 'wrap' });
-    var pinned = state.resources.filter(function (r) { return r.pin; });
+    var featured = state.resources.filter(function (r) { return r.featured; });
+    var pinned = state.resources.filter(function (r) { return r.pin && !r.featured; });
+    if (featured.length) {
+      box.appendChild(h('section', { class: 'section' },
+        h('h2', { class: 'label', text: 'Just added' }),
+        h('div', { class: 'list' }, featured.map(function (r) { return rowFor(r, true, true); }))));
+    }
     if (pinned.length) {
       box.appendChild(h('section', { class: 'section' },
         h('h2', { class: 'label', text: 'Start here' }),

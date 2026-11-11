@@ -8,6 +8,7 @@
     {"id": "events", "name": "News and events", "desc": "Market center updates and what is coming up.", "icon": "flag"}
   ],
   "resources": [
+    {"id": "stp-clerk-login", "cat": "tech", "title": "How to log into the new St. Tammany Parish Clerk of Court site", "url": "https://drive.google.com/file/d/1pROClfHuFITEoi-E45m80RV5x4S4_bXG/view", "note": "Step-by-step guide for the clerk of court's new website.", "featured": true, "new": true},
     {"id": "example-calendar", "cat": "training", "title": "Example: Class and event calendar", "url": "https://www.kw.com", "note": "Replace this with your real link.", "pin": true, "example": true},
     {"id": "example-forms", "cat": "transactions", "title": "Example: Contract and form library", "url": "https://www.kw.com", "note": "Replace this with your real link.", "pin": true, "example": true},
     {"id": "example-marketing", "cat": "marketing", "title": "Example: Listing marketing templates", "url": "https://www.kw.com", "note": "Replace this with your real link.", "example": true},

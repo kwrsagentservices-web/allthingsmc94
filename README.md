@@ -14,6 +14,7 @@ To add, move, rename or remove a link or category, edit `resources.json` and pus
 
 - Each category needs a unique `id` made only of lowercase letters, numbers and hyphens, plus a `name` and an optional `desc`.
 - Each resource needs a unique `id`, a `cat` that matches a category `id`, a `title` and a full `url` starting with `https://`. `note` is optional. Set `"pin": true` to show it under "Start here" on the home page.
+- `"featured": true` puts a link in a large red "Just added" card at the very top of the home page, and `"new": true` adds a "New" badge. Use these for announcements, and remove them once the link is no longer new.
 - Entries marked `"example": true` are placeholders and show an "Example" badge. Remove them when the real link replaces them.
 - Keep the JSON valid (commas between entries, none after the last one). Check it before pushing.
 - Never put passwords, client information or private documents in this repository. It is public.
