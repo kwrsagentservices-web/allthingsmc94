@@ -180,6 +180,7 @@ input:focus-visible, a:focus-visible, button:focus-visible {
 .cat-head p { margin: 0; color: var(--muted); max-width: 52ch; }
 .empty { border: 1px dashed var(--line); border-radius: 8px; padding: 22px 18px; color: var(--muted); }
 
+footer a { text-decoration: underline; }
 footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -379,7 +380,12 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
         h('input', { type: 'search', id: 'q', placeholder: 'Search forms, classes, tools', 'aria-label': 'Search every resource', autocomplete: 'off', value: q,
           oninput: function (e) { q = e.target.value; renderContent(); } })),
       h('div', { id: 'content' }),
-      h('footer', { text: 'Missing a link you need? Email allthingsmc94@kw.com and we will get it added. Each office is independently owned and operated. Equal Housing Opportunity.' })));
+      h('footer', null,
+        'Missing a link you need? Email ',
+        h('a', { href: 'mailto:frontdesk94@kw.com', text: 'frontdesk94@kw.com' }),
+        ' or ask in the ',
+        h('a', { href: 'https://www.facebook.com/groups/kwrsnorthshore/', target: '_blank', rel: 'noopener', text: 'Facebook group' }),
+        '. Each office is independently owned and operated. Equal Housing Opportunity.')));
     renderContent();
   }
 
