@@ -1,14 +1,14 @@
 {
   "categories": [
-    {"id": "clerk", "name": "Clerk of Court", "desc": "Record search, logins and how to get in.", "icon": "key"},
-    {"id": "lonewolf", "name": "Lone Wolf", "desc": "Transaction software guides and how-to videos.", "icon": "laptop"},
-    {"id": "commission", "name": "Commission tab", "desc": "How to submit and read your commission tab.", "icon": "dollar"},
-    {"id": "forms", "name": "Forms and leases", "desc": "Form libraries, page-by-page videos and applications.", "icon": "file"},
-    {"id": "command", "name": "Command and KW app", "desc": "How-to videos for KW Command and the KW app.", "icon": "play"},
-    {"id": "clients", "name": "Client consultations", "desc": "Listing and buyer presentations, plus marketing assets.", "icon": "house"},
-    {"id": "design", "name": "Design assets", "desc": "Canva presentations and market center logos.", "icon": "palette"},
-    {"id": "classes", "name": "Classes and calendar", "desc": "Training calendar, RSVPs and the real estate school.", "icon": "calendar"},
-    {"id": "mc", "name": "Our market center", "desc": "Leadership, rooms, meetings and updates.", "icon": "users"}
+    {"id": "clerk", "name": "Clerk of Court", "desc": "Record search, logins and how to get in.", "icon": "key", "color": "blue"},
+    {"id": "lonewolf", "name": "Lone Wolf", "desc": "Transaction software guides and how-to videos.", "icon": "laptop", "color": "indigo"},
+    {"id": "commission", "name": "Commission tab", "desc": "How to submit and read your commission tab.", "icon": "dollar", "color": "green"},
+    {"id": "forms", "name": "Forms and leases", "desc": "Form libraries, page-by-page videos and applications.", "icon": "file", "color": "amber"},
+    {"id": "command", "name": "Command and KW app", "desc": "How-to videos for KW Command and the KW app.", "icon": "play", "color": "purple"},
+    {"id": "clients", "name": "Client consultations", "desc": "Listing and buyer presentations, plus marketing assets.", "icon": "house", "color": "teal"},
+    {"id": "design", "name": "Design assets", "desc": "Canva presentations and market center logos.", "icon": "palette", "color": "pink"},
+    {"id": "classes", "name": "Classes and calendar", "desc": "Training calendar, RSVPs and the real estate school.", "icon": "calendar", "color": "orange"},
+    {"id": "mc", "name": "Our market center", "desc": "Leadership, rooms, meetings and updates.", "icon": "users", "color": "red"}
   ],
   "resources": [
     {"id": "stp-clerk-login", "cat": "clerk", "title": "How to log into the new St. Tammany Parish Clerk of Court site", "url": "https://drive.google.com/file/d/1pROClfHuFITEoi-E45m80RV5x4S4_bXG/view", "note": "Step-by-step guide for the clerk of court's new website.", "featured": true, "new": true},
