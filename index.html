@@ -234,6 +234,9 @@ input:focus-visible, a:focus-visible, button:focus-visible {
 .empty { border: 1px dashed var(--line); border-radius: 8px; padding: 22px 18px; color: var(--muted); }
 
 footer a { text-decoration: underline; }
+footer p { margin: 0 0 6px; }
+footer p:last-child { margin-bottom: 0; }
+footer { display: flex; flex-direction: column; }
 footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -443,11 +446,14 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
           oninput: function (e) { q = e.target.value; renderContent(); } })),
       h('div', { id: 'content' }),
       h('footer', null,
-        'Missing a link you need? Email ',
-        h('a', { href: 'mailto:frontdesk94@kw.com', text: 'frontdesk94@kw.com' }),
-        ' or ask in the ',
-        h('a', { href: 'https://www.facebook.com/groups/kwrsnorthshore/', target: '_blank', rel: 'noopener', text: 'Facebook group' }),
-        '. Each office is independently owned and operated. Equal Housing Opportunity.')));
+        h('p', null, 'Need a link added or changed? Email ',
+          h('a', { href: 'mailto:kwrsagentervices@gmail.com', text: 'kwrsagentervices@gmail.com' }), '.'),
+        h('p', null, 'Office questions? Email ',
+          h('a', { href: 'mailto:frontdesk94@kw.com', text: 'frontdesk94@kw.com' }), ' or join the ',
+          h('a', { href: 'https://www.facebook.com/groups/kwrsnorthshore/', target: '_blank', rel: 'noopener', text: 'Facebook group' }), '.'),
+        h('p', null, 'Copyright \u00a9 ' + new Date().getFullYear() + ' Keller Williams Realty Services, MC94 \u00b7 Office ',
+          h('a', { href: 'tel:+19857277000', text: '985.727.7000' })),
+        h('p', null, 'Each office is independently owned and operated. Equal Housing Opportunity.'))));
     renderContent();
   }
 
