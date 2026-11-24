@@ -1,9 +1,9 @@
 {
   "categories": [
     {"id": "clerk", "name": "Clerk of Court", "desc": "Record search, logins and how to get in.", "icon": "key", "color": "blue"},
-    {"id": "lonewolf", "name": "Lone Wolf", "desc": "Transaction software guides and how-to videos.", "icon": "laptop", "color": "indigo"},
-    {"id": "commission", "name": "Commission tab", "desc": "How to submit and read your commission tab.", "icon": "dollar", "color": "green"},
     {"id": "forms", "name": "Forms and leases", "desc": "Form libraries, page-by-page videos and applications.", "icon": "file", "color": "amber"},
+    {"id": "commission", "name": "Commission tab", "desc": "How to submit and read your commission tab.", "icon": "dollar", "color": "green"},
+    {"id": "lonewolf", "name": "Lone Wolf", "desc": "Transaction software guides and how-to videos.", "icon": "laptop", "color": "indigo"},
     {"id": "command", "name": "Command and KW app", "desc": "How-to videos for KW Command and the KW app.", "icon": "play", "color": "purple"},
     {"id": "clients", "name": "Client consultations", "desc": "Listing and buyer presentations, plus marketing assets.", "icon": "house", "color": "teal"},
     {"id": "design", "name": "Design assets", "desc": "Canva presentations and market center logos.", "icon": "palette", "color": "pink"},
